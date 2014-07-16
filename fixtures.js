@@ -13,8 +13,6 @@ http.createServer(function(req, res){
     ["http://code.jquery.com/jquery.js"],
     function (errors, window) {
 
-      var fixture
-
       window.$("table.contentTable").each(function(i) {
 
       	var strDate = window.$(this).find("th").text().trim();
