@@ -17,20 +17,15 @@ http.createServer(function(req, res){
 
       	var strDate = window.$(this).find("th").text().trim();
         var d = new Date(strDate);
-        matchDays.push(d.getMonth() + '/' + d.getDate() + '/' + d.getFullYear());
+        matchDays.push((d.getMonth() + 1) + '/' + d.getDate() + '/' + d.getFullYear());
 
-        window.$(this).children("tr").each(function(j) {
+        window.$(this).find("tr").each(function(j) {
 
           var kickOff = new Date(strDate + " " + window.$(this).children("td.time").text().trim());
 
           var clubs = window.$(this).children("td.clubs").text().trim().split(' v ');
 
           var location = window.$(this).children("td.location").text().trim();
-
-          console.log(kickOff);
-          console.log(clubs[0]);
-          console.log(clubs[1]);
-          console.log(location);
 
           if (location)
             matches.push({venue: location, home: clubs[0], away: clubs[1], time: kickOff});
