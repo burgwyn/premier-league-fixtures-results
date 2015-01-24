@@ -1,0 +1,8 @@
+{
+  "name": "premier-league-fixtures-results",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "jsdom": "1"
+  }
+}
